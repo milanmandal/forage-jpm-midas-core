@@ -2,6 +2,9 @@ general:
   kafka-topic: kafka-topic
   kafka-group-id: kafka-group-id
 
+server:
+  port: 33400
+  
 spring:
   kafka:
     producer:
@@ -15,6 +18,18 @@ spring:
       group-id: ${general.kafka-group-id}
       auto-offset-reset: earliest
     bootstrap-servers: localhost:9092
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: milan
+    password: test123
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+
+
 
 
 

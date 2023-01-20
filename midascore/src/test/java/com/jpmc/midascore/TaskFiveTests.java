@@ -35,7 +35,7 @@ public class TaskFiveTests {
         for (String transactionLine : transactionLines) {
             kafkaProducer.send(transactionLine);
         }
-        Thread.sleep(2000);
+        Thread.sleep(4000);// changing sleep time to 4 seconds from 2 seconds to allow the kafka listener to process the transactions
 
         logger.info("----------------------------------------------------------");
         logger.info("----------------------------------------------------------");
